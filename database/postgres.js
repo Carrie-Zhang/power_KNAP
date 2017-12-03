@@ -2,7 +2,7 @@ require('dotenv').config();
 const Sequelize = require('sequelize');
 
 let params = {};
-if (!process.env.LOCAL) { params = { dialect: 'postgres', protocol: 'postgres', logging: false, dialectOptions: { ssl: true } }; }
+if (!process.env.LOCAL) { params = { dialect: 'postgres', protocol: 'postgres', logging: true, dialectOptions: { ssl: true } }; }
 const sequelize = new Sequelize("postgres://hdgktyijnjettt:5a47e413c177d90d7af8ec47d98a95ce0b169a235dfb94fc613b7b97302fd587@ec2-23-21-96-159.compute-1.amazonaws.com:5432/d31buqsfi67mvk", params);
 
 sequelize.authenticate()
