@@ -23,9 +23,9 @@ app.use(express.static(`${__dirname}./../client`));
 //   maxAge: 24 * 60 * 60 * 1000, // one day
 // }));
 
-app.use(passport.initialize());
-app.use(passport.session());
-app.use('/auth', authRoutes);
+// app.use(passport.initialize());
+// app.use(passport.session());
+// app.use('/auth', authRoutes);
 
 // Room HTTP Requests
 app.get('/allrooms', (req, res) => {
