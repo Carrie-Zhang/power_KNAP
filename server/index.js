@@ -2,10 +2,10 @@ const http = require('http');
 const express = require('express');
 const youtubeApi = require('./youtubeService');
 const db = require('../database/postgres');
-const passport = require('passport');
+// const passport = require('passport');
 const cookieSession = require('cookie-session');
-const authRoutes = require('./auth-routes');
-const passportSetup = require('../passport-setup');
+// const authRoutes = require('./auth-routes');
+// const passportSetup = require('../passport-setup');
 
 const app = express();
 const port = process.env.PORT;
