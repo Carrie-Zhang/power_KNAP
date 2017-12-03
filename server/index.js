@@ -3,7 +3,7 @@ const express = require('express');
 const youtubeApi = require('./youtubeService');
 const db = require('../database/postgres');
 // const passport = require('passport');
-const cookieSession = require('cookie-session');
+// const cookieSession = require('cookie-session');
 // const authRoutes = require('./auth-routes');
 // const passportSetup = require('../passport-setup');
 
@@ -18,10 +18,10 @@ server.listen(port, () => console.log(`listening on port ${port}`));
 app.use(express.static(`${__dirname}./../client`));
 // const lobbySpace = io.of('/lobby');
 
-app.use(cookieSession({
-  keys: process.env.COOKIEKEY,
-  maxAge: 24 * 60 * 60 * 1000, // one day
-}));
+// app.use(cookieSession({
+//   keys: process.env.COOKIEKEY,
+//   maxAge: 24 * 60 * 60 * 1000, // one day
+// }));
 
 app.use(passport.initialize());
 app.use(passport.session());
