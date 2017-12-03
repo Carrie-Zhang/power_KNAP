@@ -11,10 +11,10 @@ passport.serializeUser((user, done) => {
 //     // need to store users in db to use this
 // });
 
-passport.use(new GoogleStrategy({
-  callbackURL: '/auth/google/redirect',
-  clientID: process.env.GOOGLECLIENTID,
-  clientSecret: process.env.GOOGLECLIENTSECRET,
-}, (accessToken, refreshToken, profile, done) => {
-  done(null, profile);
-}));
+// passport.use(new GoogleStrategy({
+//   callbackURL: '/auth/google/redirect',
+//   clientID: process.env.GOOGLECLIENTID,
+//   clientSecret: process.env.GOOGLECLIENTSECRET,
+// }, (accessToken, refreshToken, profile, done) => {
+//   done(null, profile);
+// }));
