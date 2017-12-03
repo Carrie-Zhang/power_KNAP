@@ -32,6 +32,6 @@ node_modules/
 bower_components/
 
 
-client/dist/bundle.js
+
 codebase.js
 package-lock.json
