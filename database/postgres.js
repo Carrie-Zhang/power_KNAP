@@ -42,8 +42,8 @@ const UsersRooms = sequelize.define('users_rooms', {
 });
 
 
-// Users.sync({ force: true });
-// Rooms.sync({ force: true });
+Users.sync({ force: true });
+Rooms.sync({ force: true });
 
 UsersRooms.belongsTo(Users);
 UsersRooms.belongsTo(Rooms);
@@ -112,6 +112,10 @@ const createRoom = (roomName, cb) => {
 // Video Queries
 const findVideos = roomId => sequelize.query(`select distinct on (date_trunc('second', "createdAt")) * from videos where "roomId" = ${roomId}`, { type: sequelize.QueryTypes.SELECT});
 const removeFromPlaylist = (title, roomId, createdTime) => Videos.findAll({ where: { videoName: title, roomId: roomId , createdAt: createdTime} }).then(video => video.destroy());
+
+
+Videos.sync({ force: true });
+UsersRooms.sync({ force: true });
 
 exports.createVideoEntry = createVideoEntry;
 exports.getRoomProperties = getRoomProperties;
